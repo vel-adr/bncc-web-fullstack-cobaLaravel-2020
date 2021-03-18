@@ -13,7 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController');
+Route::get('/', function() {
+    return view('index');
+});
+
+Route::get('/data-tables', function() {
+    return view('table');
+});
 
 Route::get('/register', function(){
     return view('register');
