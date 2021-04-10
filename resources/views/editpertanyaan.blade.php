@@ -1,5 +1,5 @@
 @php
-$url = '/pertanyaan'.'/'.$question[0]->id;
+$url = '/pertanyaan'.'/'.$question->id;
 @endphp
 
 @extends('master')
@@ -14,15 +14,21 @@ $url = '/pertanyaan'.'/'.$question[0]->id;
         <div class="mb-3">
             <label class="form-label" for="title">Title : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <input class="form-control" type="text" name="title" id="title"
-                placeholder="Write your question's title here" maxlength="45" size="45"
-                value="{{ $question[0]->title }}">
+                placeholder="Write your question's title here" maxlength="45" size="45" value="{{ $question->title }}"
+                required>
         </div>
+        @error('title')
+        <div class="alert alert-danger" role="alert">{{ $message }}</div>
+        @enderror
 
         <div class="mb-3">
             <label class="form-label" for="content">Question : </label>
             <textarea class="form-control" name="content" id="content" maxlength="255" cols="51" rows="5"
-                placeholder="Write your question here">{{ $question[0]->content }}</textarea>
+                placeholder="Write your question here" required>{{ $question->content }}</textarea>
         </div>
+        @error('content')
+        <div class="alert alert-danger" role="alert">{{ $message }}</div>
+        @enderror
 
         <button type="submit" class="btn btn-outline-success">Edit</button>
     </form>

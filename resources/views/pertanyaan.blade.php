@@ -16,7 +16,7 @@
         @foreach ($questions as $q)
         <tr>
             <td scope="row"><a href="/pertanyaan/{{ $q->id }}">{{ $q->title }}</a></td>
-            <td>{{ $q->profile_id }}</td>
+            <td>{{ $q->user->full_name }}</td>
             <td>{{ $q->updated_at }}</td>
             @if ($q->correct_answer_id != NULL)
             <td>&#10004</td>

@@ -1,18 +1,19 @@
 @php
-$url = '/pertanyaan'.'/'.$question[0]->id;
+$url = '/pertanyaan'.'/'.$question->id;
 @endphp
 
 @extends('master')
 @section('title')
-{{ $question[0]->title }}
+{{ $question->title }}
 @endsection
 
 @section('content')
 <div class="container">
-    <h3>{{ $question[0]->title }}</h3>
+    <h3>{{ $question->title }}</h3>
     <hr>
-    <p>{{ $question[0]->content }}</p>
-    <p>Asked {{ $question[0]->created_at }} | <a href="/pertanyaan/{{ $question[0]->id }}/edit">Edit question</a></p>
+    <p>{{ $question->content }}</p>
+    <p>Asked by {{ $question->user->full_name }} at {{ $question->created_at }} | <a
+            href="/pertanyaan/{{ $question->id }}/edit">Edit question</a></p>
     <form action="{{ url($url) }}" method="POST">
         @csrf
         @method('delete')
