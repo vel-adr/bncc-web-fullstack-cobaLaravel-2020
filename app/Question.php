@@ -18,4 +18,14 @@ class Question extends Model
     {
         return $this->hasMany('App\Answer');
     }
+
+    public function correctAnswer()
+    {
+        return $this->hasOne('App\Answer', 'id', 'correct_answer_id');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag', 'questions_tags', 'question_id', 'tag_id');
+    }
 }

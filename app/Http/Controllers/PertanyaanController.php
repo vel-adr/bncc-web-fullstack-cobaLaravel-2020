@@ -73,8 +73,8 @@ class PertanyaanController extends Controller
 
         $question = Question::find($id);
         $answers = $question->answers;
-
-        return view('detailpertanyaan', ['question' => $question, 'answers' => $answers]);
+        $correctAnswer = $question->correctAnswer;
+        return view('detailpertanyaan', compact('question', 'answers', 'correctAnswer'));
     }
 
     /**
@@ -120,8 +120,8 @@ class PertanyaanController extends Controller
 
         $question = Question::find($id);
         $answers = $question->answers;
-
-        return view('detailpertanyaan', ['question' => $question, 'answers' => $answers]);
+        $correctAnswer = $question->correctAnswer;
+        return view('detailpertanyaan', compact('question', 'answers', 'correctAnswer'));
     }
 
     /**

@@ -6,7 +6,7 @@
 <div class="container">
     <h1>List Pertanyaan</h1>
     <hr>
-    <table class="table table-hover table-striped">
+    <table class="table table-hover table-striped text-center">
         <tr>
             <th scope="col">Title</th>
             <th scope="col">Questioner</th>

@@ -12,4 +12,9 @@ class Answer extends Model
     {
         return $this->belongsTo('App\Question', 'question_id', 'id');
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'profile_id', 'id');
+    }
 }
