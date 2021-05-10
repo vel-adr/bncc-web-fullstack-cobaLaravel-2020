@@ -14,16 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('welcome');
 });
 
-Route::get('/data-tables', function () {
-    return view('table');
-});
+// 
+// Route::get('/data-tables', function () {
+//     return view('table');
+// });
 
-Route::get('/register', function () {
-    return view('register');
-});
+// Route::get('/register', function () {
+//     return view('register');
+// });
 
 // Route::post('/welcome', 'AuthController@request');
 // Route::get('/pertanyaan', 'PertanyaanController@index');
@@ -35,3 +36,7 @@ Route::get('/register', function () {
 // Route::get('/pertanyaan/{id}/edit', 'PertanyaanController@edit');
 
 Route::resource('pertanyaan', 'PertanyaanController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

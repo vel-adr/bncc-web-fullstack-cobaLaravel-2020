@@ -1,31 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman awal</title>
-</head>
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Dashboard') }}</div>
 
-<body>
-    <h1>Bina Nusantara Computer Club</h1>
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-    <h2>Divisi Learning and Training</h2>
-    <p>Belajar Laravel bersama</p>
-
-    <h2>Benefit Join di BNCC LnT</h2>
-    <ul>
-        <li>Mendapatkan motivasi dan diskusi sesama peserta</li>
-        <li>Sharing knowledge dari para pengajar</li>
-        <li>Dibuat oleh calon web developer terbaik</li>
-    </ul>
-
-    <h2>Cara bergabung ke BNCC LnT</h2>
-    <ol>
-        <li>Mengunjungi website ini</li>
-        <li>Mendaftar di <a href="/register">Form Sign Up</a></li>
-        <li>Selesai</li>
-    </ol>
-</body>
-
-</html>
+                    {{ __('You are logged in!') }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

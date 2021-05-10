@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.app')
 
 @section('title', 'Questions List')
 
@@ -16,7 +16,7 @@
         @foreach ($questions as $q)
         <tr>
             <td scope="row"><a href="/pertanyaan/{{ $q->id }}">{{ $q->title }}</a></td>
-            <td>{{ $q->user->full_name }}</td>
+            <td>{{ $q->user->name }}</td>
             <td>{{ $q->updated_at }}</td>
             @if ($q->correct_answer_id != NULL)
             <td>&#10004</td>
@@ -26,6 +26,6 @@
         </tr>
         @endforeach
     </table>
-    <a href="/pertanyaan/create">Create new question</a>
+    <a href="/pertanyaan/create" class="btn btn-primary">Create new question</a>
 </div>
 @endsection

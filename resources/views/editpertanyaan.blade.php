@@ -2,7 +2,7 @@
 $url = '/pertanyaan'.'/'.$question->id;
 @endphp
 
-@extends('master')
+@extends('layouts.app')
 @section('title', 'Edit your question')
 
 @section('content')

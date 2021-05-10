@@ -2,7 +2,7 @@
 $url = '/pertanyaan'.'/'.$question->id;
 @endphp
 
-@extends('master')
+@extends('layouts.app')
 @section('title')
 {{ $question->title }}
 @endsection
@@ -12,7 +12,7 @@ $url = '/pertanyaan'.'/'.$question->id;
     <h3>{{ $question->title }}</h3>
     <hr>
     <p>{{ $question->content }}</p>
-    <p>Asked by {{ $question->user->full_name }} at {{ $question->created_at }} | <a
+    <p>Asked by {{ $question->user->name }} at {{ $question->created_at }} | <a
             href="/pertanyaan/{{ $question->id }}/edit">Edit question</a></p>
     <form action="{{ url($url) }}" method="POST">
         @csrf

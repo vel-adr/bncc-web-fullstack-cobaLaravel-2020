@@ -1,4 +1,4 @@
-@extends('master')
+@extends('layouts.app')
 
 @section('title', 'Create a question')
 
@@ -26,7 +26,7 @@
         @enderror
 
         {{-- sementara profileid selalu 1 karena belum ada login --}}
-        <input type="hidden" name="profile_id" value="1">
+        <input type="hidden" name="profile_id" value="{{ Auth::id() }}">
 
         <button type="submit" class="btn btn-outline-success">Submit</button>
     </form>
